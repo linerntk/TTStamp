@@ -72,9 +72,11 @@ function showPosition(position) {
      liff.getProfile().then(function(profile) {
             var uid = profile.userId;
             var uname = profile.displayName;
+           var pictureUrl = profile.pictureUrl;
         var xos = liff.getOS();
   x.innerHTML = "Lat: " + position.coords.latitude + 
   "<br>Long: " + position.coords.longitude+ 
+  "<br>picture: " + pictureUrl + 
   "<br>userId: " + uid+ 
   "<br>displayName: " + uname+
   "<br>your OS: " + xos;
