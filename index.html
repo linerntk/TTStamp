@@ -97,6 +97,14 @@ var xmlhttp = new XMLHttpRequest();
           timer: "5000",
         });
         alert(jsonResponse.desc);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        
         liff.closeWindow();
       }});  
 }
