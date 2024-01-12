@@ -135,12 +135,11 @@ var xmlhttp = new XMLHttpRequest();
         if (this.readyState == 4 && this.status == 200) {
             var jsonResponse = JSON.parse(this.responseText);
         }
-        Swal({
-          position: "top-end",
+        swal({
+          title: "บันทึกเวลาออก",
+          text: "บันทึกข้อมูลสำเร็จ",
           icon: "success",
-          title: "Your work has been saved",
-          showConfirmButton: false,
-          timer: 1500
+          timer: "1500",
         });
         liff.closeWindow();
       }});  
