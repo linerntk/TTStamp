@@ -88,13 +88,13 @@ var xmlhttp = new XMLHttpRequest();
         if (this.readyState == 4 && this.status == 200) {
             var jsonResponse = JSON.parse(this.responseText);
         }
-        alert(jsonResponse.desc);
         swal({
           title: "แจ้งการบันทึกข้อมูล!",
           text: "บันทึกข้อมูลสำเร็จ",
           icon: "success",
           timer: "5000",
         });
+        alert(jsonResponse.desc);
         liff.closeWindow();
       }});  
 }
