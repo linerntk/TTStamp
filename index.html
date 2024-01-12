@@ -135,6 +135,7 @@ var xmlhttp = new XMLHttpRequest();
         if (this.readyState == 4 && this.status == 200) {
             var jsonResponse = JSON.parse(this.responseText);
         }
+        alert(jsonResponse.desc);
         swal({
           title: "บันทึกเวลาออก",
           text: "บันทึกข้อมูลสำเร็จ",
