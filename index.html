@@ -4,16 +4,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <style>
-      #clock {
-        font-size: 2em;
-        text-align: center;
-        margin-top: 50px;
-      }
-    </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="styles.css">
     <title>IT Green</title>
   </head>
   <body>
@@ -22,7 +15,9 @@
 <img style="display:block;margin:auto;" src="https://cdn.jsdelivr.net/gh/linerntk/TTStamp/IT-Green-logo184x95px.png" class="mb-2" width="160" height="80" style="border-radius: 100% id="logo1"">
   <h2>ระบบบันทึกเวลา</h2>
 <p>คลิ๊กปุ่มเพื่อบันทึกเวลาและบันทึกตำแหน่ง</p>
-<div id="clock"></div>
+<div class="clock-container">
+  <div id="clock" class="digital-clock"></div>
+</div>
 <div id="cin" class="invisible"><button type="button" class="btn btn-success" onclick="getLocation()">Check-In</button></div>
 <div id="cout" class="invisible"><button id="cout" type="button" class="btn btn-danger" onclick="getLocationOut()">Check-Out</button></div>
 
@@ -154,19 +149,22 @@ var xmlhttp = new XMLHttpRequest();
       timer: 1500
     })
 }
- function updateClock() {
-        google.script.run.withSuccessHandler(displayTime).updateClock();
-      }
-
-      function displayTime(time) {
-        document.getElementById('clock').innerText = time;
-      }
-
-      setInterval(updateClock, 1000);
-  function updateClock() {
+function updateClock() {
   var now = new Date();
-  return now.toLocaleTimeString();
+  var hours = now.getHours().toString().padStart(2, '0');
+  var minutes = now.getMinutes().toString().padStart(2, '0');
+  var seconds = now.getSeconds().toString().padStart(2, '0');
+  var timeString = hours + ':' + minutes + ':' + seconds;
+
+  document.getElementById('clock').textContent = timeString;
 }
+
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+// Initial update
+updateClock();
+
 
 </script>
 
