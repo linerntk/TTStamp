@@ -163,7 +163,10 @@ var xmlhttp = new XMLHttpRequest();
       }
 
       setInterval(updateClock, 1000);
-
+  function updateClock() {
+  var now = new Date();
+  return now.toLocaleTimeString();
+}
 
 </script>
 
