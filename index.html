@@ -4,7 +4,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+   <style>
+      #clock {
+        font-size: 2em;
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -15,8 +21,8 @@
 <h1></h1>
 <img style="display:block;margin:auto;" src="https://cdn.jsdelivr.net/gh/linerntk/TTStamp/IT-Green-logo184x95px.png" class="mb-2" width="160" height="80" style="border-radius: 100% id="logo1"">
   <h2>ระบบบันทึกเวลา</h2>
-  <div id="clock"></div>
 <p>คลิ๊กปุ่มเพื่อบันทึกเวลาและบันทึกตำแหน่ง</p>
+<div id="clock"></div>
 <div id="cin" class="invisible"><button type="button" class="btn btn-success" onclick="getLocation()">Check-In</button></div>
 <div id="cout" class="invisible"><button id="cout" type="button" class="btn btn-danger" onclick="getLocationOut()">Check-Out</button></div>
 
