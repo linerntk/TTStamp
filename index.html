@@ -17,9 +17,7 @@
 <div class="clock-container">
   <div id="clock" class="digital-clock"></div>
 </div>
-<div class="image-container">
-  <div id="image" class="imagejpg"></div>
-</div>
+      
 <div id="cin" class="invisible"><button type="button" class="btn btn-success" onclick="getLocation()">Check-In</button></div>
 <div id="cout" class="invisible"><button id="cout" type="button" class="btn btn-danger" onclick="getLocationOut()">Check-Out</button></div>
 
@@ -50,15 +48,7 @@ liff.closeWindow();
             }
 }
 
-function showProfile(){
-     liff.getProfile().then(function(profile) {
-           var pictureUrl = profile.pictureUrl;
-         document.getElementById('image').appendChild(pictureUrl);
-      liff.closeWindow();
-      }); 
-}
   
-
 function initializeLiff(myLiffId) {
     liff
         .init({
@@ -66,7 +56,6 @@ function initializeLiff(myLiffId) {
         })
         .then(() => {
             checks();
-          showProfile();
         })
         .catch((err) => {
         });
